@@ -3,444 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Achievers Lane</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root {
-            --primary-color: #4f46e5;
-            --secondary-color: #1e293b;
-            --accent-color: #f43f5e;
-            --light-color: #f8fafc;
-            --dark-color: #0f172a;
-            --transition: all 0.3s ease;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         
         body {
-            background-color: var(--light-color);
-            color: var(--dark-color);
-            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
         }
         
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        /* Header & Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 100;
-            padding: 1.5rem 0;
-            background-color: rgba(248, 250, 252, 0.9);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
+        .nav-link {
             position: relative;
-            padding: 0.5rem 0;
-            font-weight: 500;
-            transition: var(--transition);
         }
         
-        .nav-links a::after {
+        .nav-link::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--primary-color);
-            transition: var(--transition);
+            bottom: -2px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
         }
         
-        .nav-links a:hover::after {
+        .nav-link:hover::after {
             width: 100%;
         }
         
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--dark-color);
-            cursor: pointer;
+        .testimonial-slider {
+            transition: transform 0.5s ease;
         }
         
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 6rem;
+        #contact-form .form-input {
+            transition: all 0.3s ease;
         }
         
-        .hero-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 4rem;
+        #contact-form .form-input:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
         }
-        
-        .hero-text {
-            flex: 1;
-        }
-        
-        .hero-img {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-        
-        .hero-img img {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-weight: 600;
-        }
-        
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-        
-        .hero-title span {
-            color: var(--primary-color);
-        }
-        
-        .hero-description {
-            font-size: 1.1rem;
-            color: var(--secondary-color);
-            margin-bottom: 2rem;
-            max-width: 500px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.8rem;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: var(--transition);
-            border: 2px solid transparent;
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-            margin-left: 1rem;
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* About Section */
-        section {
-            padding: 6rem 0;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-        
-        .section-title span {
-            color: var(--primary-color);
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 4rem;
-        }
-        
-        .about-img {
-            flex: 1;
-        }
-        
-        .about-img img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 20px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-text p {
-            margin-bottom: 1.5rem;
-            color: var(--secondary-color);
-        }
-        
-        /* Skills Section */
-        .skills-container {
-            background-color: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-        
-        .skill-card {
-            background-color: var(--light-color);
-            padding: 1.8rem;
-            border-radius: 10px;
-            text-align: center;
-            transition: var(--transition);
-        }
-        
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-        
-        .skill-card i {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .skill-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .skill-card p {
-            font-size: 0.9rem;
-            color: var(--secondary-color);
-        }
-        
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-        
-        .project-card {
-            background-color: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-        
-        .project-img {
-            height: 220px;
-            overflow: hidden;
-        }
-        
-        .project-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .project-card:hover .project-img img {
-            transform: scale(1.05);
-        }
-        
-        .project-info {
-            padding: 1.5rem;
-        }
-        
-        .project-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .project-info p {
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .project-tag {
-            background-color: var(--light-color);
-            color: var(--primary-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .project-links a {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-        
-        .project-links a i {
-            font-size: 1.2rem;
-        }
-        
-        /* Contact Section */
-        .contact-container {
-            display: flex;
-            gap: 4rem;
-        }
-        
-        .contact-info {
-            flex: 1;
-        }
-        
-        .contact-form {
-            flex: 1;
-            background-color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-        
-        .info-card {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .info-card i {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--light-color);
-            color: var(--primary-color);
-            border-radius: 50%;
-            font-size: 1.2rem;
-        }
-        
-        .info-text h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.3rem;
-        }
-        
-        .info-text p {
-            color: var(--secondary-color);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
-        }
-        
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        /* Footer */
         footer {
             background-color: var(--dark-color);
-            color: white;
+            color: rgb(213, 25, 25);
             padding: 3rem 0;
-            text-align: center;
-        }
+            text-align:center;
+                }
         
         .footer-content {
             max-width: 500px;
@@ -449,7 +57,7 @@
         
         .footer-content p {
             margin: 1rem 0;
-            color: #cbd5e1;
+            color: #1c1f1d;
         }
         
         .social-links {
@@ -465,7 +73,7 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(10, 7, 44, 0.1);
             border-radius: 50%;
             transition: var(--transition);
         }
@@ -477,8 +85,10 @@
         
         .copyright {
             font-size: 0.9rem;
-            color: #94a3b8;
+            color: #94b8b0;
         }
+                
+        
         
         /* Responsive Styles */
         @media (max-width: 1024px) {
@@ -514,7 +124,7 @@
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 80px);
-                background-color: white;
+                background-color: rgb(198, 41, 41);
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
@@ -540,272 +150,233 @@
                 grid-template-columns: 1fr;
             }
         }
+        .contact-info {
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+}
+
+.contact-info h3 {
+  color: #333;
+  margin-top: 15px;
+}
+
+.contact-info p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.contact-info a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
     </style>
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo">Portfolio</a>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <button class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <div class="w-10 h-10 flex items-center justify-center bg-blue-600 text-white rounded-full font-bold text-xl">EE</div>
+                <span class="text-xl font-semibold text-gray-800">Achievers Lane</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-gray-600 hover:text-blue-600">Home</a>
+                <a href="#about" class="nav-link text-gray-600 hover:text-blue-600">About</a>
+                <a href="#subjects" class="nav-link text-gray-600 hover:text-blue-600">Subjects</a>
+                <a href="#contact" class="nav-link text-gray-600 hover:text-blue-600">Contact</a>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
-    </header>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 py-4 border-t">
+            <div class="flex flex-col space-y-3">
+                <a href="#home" class="text-gray-600 hover:text-blue-600">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-600">About</a>
+                <a href="#subjects" class="text-gray-600 hover:text-blue-600">Subjects</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600">Contact</a>
+                
+>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <p class="hero-subtitle">Hello, I'm</p>
-                    <h1 class="hero-title"><span>Abhishek Yadav</span> Developer</h1>
-                    <p class="hero-description">
-                        I'm a passionate developer specializing in creating modern web applications with clean code and intuitive user interfaces.
-                    </p>
-                    <div>
-                        <a href="#projects" class="btn">View My Work</a>
-                        <a href="#contact" class="btn btn-outline">Contact Me</a>
-                    </div>
-                </div>
-                <div class="hero-img">
-                    <img src="#" alt="" />
+    <section id="home" class="relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-700 opacity-80"></div>
+        <div class="bg-gray-900">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b45487c9-040a-472d-a75d-05b0ea20c715.png" alt="A focused student studying with books and laptop in a well-lit modern library setting" class="w-full h-screen object-cover opacity-40" />
+        </div>
+        <div class="absolute inset-0 flex items-center">
+            <div class="container mx-auto px-6 z-10 text-white">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Personalized Learning for Academic Success</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl">Expert tutors dedicated to helping students reach their full potential through customized lessons and one-on-one attention.</p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="bg-white text-blue-700 px-6 py-3 rounded-md font-semibold hover:bg-gray-100 transition duration-300">
+                        Book a Session
+                    </a>
+
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About <span>Me</span></h2>
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="" alt="" />
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Why Choose Our Tutoring Services?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We provide tailored learning experiences that adapt to each student's unique needs and learning style.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Expert Tutors</h3>
+                    <p class="text-gray-600">Our tutors are subject-matter experts with extensive teaching experience and advanced degrees.</p>
                 </div>
-                <div class="about-text">
-                    <h4>I'm a Web Developer based in [Your Location]</h3>
-                    <a href="#" class="btn">Download CV</a>
+                
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Personalized Approach</h3>
+                    <p class="text-gray-600">Customized lesson plans tailored to your learning style, pace, and academic goals.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Proven Results</h3>
+                    <p class="text-gray-600">Students typically improve their grades by 1-2 letter grades within the first 3 months.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title">My <span>Skills</span></h2>
-            <div class="skills-container">
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <i class="fab fa-html5"></i>
-                        <h3>HTML5</h3>
-
-                    </div>
-                    <div class="skill-card">
-                        <i class="fab fa-css3-alt"></i>
-                        <h3>CSS3</h3>
-                        
-                    </div>
-                    <div class="skill-card">
-                        <i class="fab fa-js"></i>
-                        <h3>JavaScript</h3>
-
-                    </div>
-                    <div class="skill-card">
-                        <i class="fab fa-python"></i>
-                        <h3>python</h3>
-                        
-                    </div>
-                              <div class="skill-card">
-                        <i class="fas fa-database"></i>
-                        <h3>Databases</h3>
-                        
-                    </div>
-                </div>
+    <!-- Subjects Section -->
+    <section id="subjects" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Subjects</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive academic support across all major subject areas.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">My <span>Projects</span></h2>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/56880337-5505-45ac-a8eb-0b9e7d153efa.png" alt="E-commerce application dashboard showing product listings and analytics" />
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7f2cee1b-eec7-46c1-adde-2f7640705871.png" alt="Close-up of a calculator and math textbook with equations on graph paper" class="w-full h-full object-cover" />
                     </div>
-                    <div class="project-info">
-                        <h3>E-Commerce Platform</h3>
-                        
-                                               
-                            <div class="project-tags">
-                            <span class="project-tag">React</span>
-                            <span class="project-tag">Node.js</span>
-                            <span class="project-tag">MongoDB</span>
-                            <span class="project-tag">Stripe</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="github.com/abhishek006y/smartwatch-website"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="https://github.com/abhishek006y/smartwatch-website"><i class="fab fa-github"></i> Source Code</a>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Mathematics</h3>
+                        <p class="text-gray-600 mb-4">From basic arithmetic to advanced calculus and statistics.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Algebra</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Calculus</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Geometry</span>
                         </div>
                     </div>
                 </div>
                 
-             
-
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/767f857c-ff0a-4996-9167-b8d579bd2e32.png" alt="Laboratory setting with beakers, test tubes and molecular models for science education" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Sciences</h3>
+                        <p class="text-gray-600 mb-4">Biology, Chemistry, Physics and all scientific disciplines.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Biology</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Chemistry</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Physics</span>
+                        </div>
+                    </div>
+                </div>
                 
-             <!--   Project 2 -->
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1b5b5d5e-d1a0-47a3-8589-2e89c4c1ee67.png" alt="Portfolio website showcase with multiple section layouts" />
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c0cd301d-0537-461a-a588-b22753a0a42c.png" alt="English literature books stacked with reading glasses and a cup of tea" class="w-full h-full object-cover" />
                     </div>
-                    <div class="project-info">
-                        <h3>Portfolio Website</h3>
-                        <p>A responsive portfolio template designed to showcase projects, skills, and contact information.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">HTML</span>
-                            <span class="project-tag">CSS</span>
-                            <span class="project-tag">JavaScript</span>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Language Arts</h3>
+                        <p class="text-gray-600 mb-4">Reading comprehension, writing skills, and literature analysis.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Reading</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Writing</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Grammar</span>
                         </div>
-                        <div class="project-links">
-                            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="#"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b6033cd8-26f9-4489-8287-852f03c380bc.png" alt="World map with push pins and a plane miniature representing global studies" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Social Studies</h3>
+                        <p class="text-gray-600 mb-4">History, geography, government and economics made engaging.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">History</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Geography</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Economics</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-   <!-- Contact Section-->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Get In <span>Touch</span></h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="info-card">
-                        <i class="fas fa-envelope"></i>
-                        <div class="info-text">
-                            <h3>Email</h3>
-                            <p>abhishekyadav2431745@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="info-card">
-                        <i class="fas fa-phone"></i>
-                        <div class="info-text">
-                            <h3>Phone</h3>
-                            <p>+918187968401 </p>
-                        </div>
-                    </div>
-                    <div class="info-card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div class="info-text">
-                            <h3>Location</h3>
-                            <p>kanpur</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 mb-6">Don't see your subject? We likely cover it! Contact us to inquire.</p>
+                <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition duration-300 inline-block">
+                    Ask About Our Subjects
+                </a>
             </div>
-        </div>
+                   
     </section>
-
+    <!--contact-->
+<div class="contact-info">
+  <h3>Call Us</h3>
+  <p><a href="tel:">+918739053262</a></p>
+  <h3>Email Us</h3>
+  <p><a href="mailto:info@example.com">workanasahmad@gmail.com</a></p>
+</div>
      <!--Footer-->
     <footer>
         <div class="container">
             <div class="footer-content">
-                
-                <p>Creating digital experiences that matter through clean code and thoughtful design.</p>
                 <div class="social-links">
-                    <a href="https://github.com/abhishek006y"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/abhishekyadav086/"><i class="fab fa-linkedin-in"></i></a>
-                    
+                    <a href="https://www.instagram.com/achievers_lane"><i class="fab fa-instagram"></i></a>
                 </div>
-                <p class="copyright">© 2025 Abhishek Yadav. All rights reserved.</p>
+                  <p class="copyright">© 2025 Achievers Lane. All rights reserved.</p>
+            
             </div>
-        </div>
     </footer>
+        
+    
 
-    !-- JavaScript -->
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Close mobile menu if open
-                if(navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                }
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Form submission
-        const form = document.querySelector('form');
-        if(form) {
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Thank you for your message! I will get back to you soon.');
-                form.reset();
-            });
-        }
-    </script>
 </body>
 </html>
-
