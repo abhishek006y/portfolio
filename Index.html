@@ -48,7 +48,7 @@
             color: rgb(213, 25, 25);
             padding: 3rem 0;
             text-align:center;
-                }
+        }
         
         .footer-content {
             max-width: 500px;
@@ -87,8 +87,6 @@
             font-size: 0.9rem;
             color: #94b8b0;
         }
-                
-        
         
         /* Responsive Styles */
         @media (max-width: 1024px) {
@@ -151,37 +149,35 @@
             }
         }
         .contact-info {
-  text-align: center;
-  margin-top: 30px;
-  padding: 20px;
-  background-color: #f0f0f0;
-  border-radius: 8px;
-}
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+        }
 
-.contact-info h3 {
-  color: #333;
-  margin-top: 15px;
-}
+        .contact-info h3 {
+            color: #333;
+            margin-top: 15px;
+        }
 
-.contact-info p {
-  color: #555;
-  line-height: 1.6;
-}
+        .contact-info p {
+            color: #555;
+            line-height: 1.6;
+        }
 
-.contact-info a {
-  color: #007BFF;
-  text-decoration: none;
-}
+        .contact-info a {
+            color: #007BFF;
+            text-decoration: none;
+        }
 
-.contact-info a:hover {
-  text-decoration: underline;
-}
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
     </style>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-4">
@@ -196,7 +192,6 @@
                 <a href="#contact" class="nav-link text-gray-600 hover:text-blue-600">Contact</a>
             </div>
             
-            <!-- Mobile menu button -->
             <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -204,20 +199,16 @@
             </button>
         </div>
         
-        <!-- Mobile menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white px-6 py-4 border-t">
             <div class="flex flex-col space-y-3">
                 <a href="#home" class="text-gray-600 hover:text-blue-600">Home</a>
                 <a href="#about" class="text-gray-600 hover:text-blue-600">About</a>
                 <a href="#subjects" class="text-gray-600 hover:text-blue-600">Subjects</a>
                 <a href="#contact" class="text-gray-600 hover:text-blue-600">Contact</a>
-                
->
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="relative">
         <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-700 opacity-80"></div>
         <div class="bg-gray-900">
@@ -228,16 +219,14 @@
                 <h1 class="text-4xl md:text-6xl font-bold mb-4">Personalized Learning for Academic Success</h1>
                 <p class="text-xl md:text-2xl mb-8 max-w-2xl">Expert tutors dedicated to helping students reach their full potential through customized lessons and one-on-one attention.</p>
                 <div class="flex space-x-4">
-                    <a href="#contact" class="bg-white text-blue-700 px-6 py-3 rounded-md font-semibold hover:bg-gray-100 transition duration-300">
+                    <a href="#contact-form" class="bg-white text-blue-700 px-6 py-3 rounded-md font-semibold hover:bg-gray-100 transition duration-300">
                         Book a Session
                     </a>
-
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
@@ -279,7 +268,6 @@
         </div>
     </section>
 
-    <!-- Subjects Section -->
     <section id="subjects" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
@@ -355,28 +343,84 @@
                     Ask About Our Subjects
                 </a>
             </div>
-                   
+        </div>
     </section>
-    <!--contact-->
-<div class="contact-info">
-  <h3>Call Us</h3>
-  <p><a href="tel:">+918739053262</a></p>
-  <h3>Email Us</h3>
-  <p><a href="mailto:info@example.com">workanasahmad@gmail.com</a></p>
-</div>
-     <!--Footer-->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="social-links">
-                    <a href="https://www.instagram.com/achievers_lane"><i class="fab fa-instagram"></i></a>
-                </div>
-                  <p class="copyright">© 2025 Achievers Lane. All rights reserved.</p>
-            
-            </div>
-    </footer>
-        
-    
 
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="contact-container">
+                <div class="contact-header text-center col-span-full">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Get in Touch</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Have questions or ready to book a session? Fill out the form below or contact us directly.</p>
+                </div>
+
+                <div id="contact-form" class="contact-form">
+                    <h2 class="text-2xl font-semibold text-blue-700 mb-4">Send Us a Message</h2>
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="apikey" value="c6cd8569-8674-4eec-851b-cdec246fcda5">
+                        <div class="form-group">
+                            <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="form-input w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-300" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="form-input w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-300" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" class="form-input w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-300" required></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="contact-info">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Contact Information</h3>
+                        <div class="info-item mb-4">
+                            <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-800">Call Us</h4>
+                                <p class="text-gray-600"><a href="tel:+918739053262">+91 87390 53262</a></p>
+                            </div>
+                        </div>
+                        <div class="info-item mb-4">
+                            <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-800">Email Us</h4>
+                                <p class="text-gray-600"><a href="mailto:workanasahmad@gmail.com">workanasahmad@gmail.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.instagram.com/achievers_lane" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm">&copy; 2025 Achievers Lane. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
